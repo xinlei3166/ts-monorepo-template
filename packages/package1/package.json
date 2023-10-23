@@ -1,0 +1,55 @@
+{
+  "name": "@ts-monorepo-template/package1",
+  "version": "0.1.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xinlei3166/ts-monorepo-template.git",
+    "directory": "packages/package1"
+  },
+  "keywords": [
+    "typescript",
+    "monorepo",
+    "template"
+  ],
+  "bugs": {
+    "url": "https://github.com/xinlei3166/ts-monorepo-template/issues"
+  },
+  "homepage": "https://github.com/xinlei3166/ts-monorepo-template/tree/main/packages/package1#readme",
+  "author": "君惜",
+  "license": "MIT",
+  "bin": {},
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "unpkg": "dist/index.min.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./dist/*": "./dist/*"
+  },
+  "scripts": {
+    "test": "vitest",
+    "dev": "tsup src/index.ts --watch src",
+    "build": "pnpm clean && run-p build:bundle build:umd",
+    "build:bundle": "tsup src/index.ts --dts --format cjs,esm",
+    "build:umd": "rollup --config ../../scripts/rollup.config.mjs",
+    "clean": "rm -rf dist",
+    "release": "yunque-release --gtp",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 --commit-path ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@yunquejs/release": "^0.1.9",
+    "vitest": "^0.34.6"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

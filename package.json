@@ -1,0 +1,68 @@
+{
+  "name": "ts-monorepo-template",
+  "version": "0.1.0",
+  "description": "",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xinlei3166/ts-monorepo-template.git"
+  },
+  "keywords": [
+    "typescript",
+    "monorepo",
+    "template"
+  ],
+  "bugs": {
+    "url": "https://github.com/xinlei3166/ts-monorepo-template/issues"
+  },
+  "homepage": "https://github.com/xinlei3166/ts-monorepo-template#readme",
+  "author": "君惜",
+  "license": "MIT",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "simple-git-hooks",
+    "test": "vitest",
+    "copyfiles": "node ./scripts/copyfiles.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-buble": "^1.0.3",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.4",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/node": "^20.8.7",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "@yunquejs/release": "^0.1.9",
+    "conventional-changelog-cli": "^4.1.0",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "lint-staged": "^15.0.2",
+    "npm-run-all": "^4.1.5",
+    "picocolors": "latest",
+    "prettier": "^3.0.3",
+    "rollup": "^4.1.4",
+    "simple-git-hooks": "latest",
+    "tslib": "^2.6.2",
+    "tsup": "^7.2.0",
+    "tsx": "latest",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.6"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged --concurrent false",
+    "commit-msg": "pnpm exec tsx scripts/verifyCommit.ts $1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,vue}": [
+      "eslint --fix"
+    ]
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
