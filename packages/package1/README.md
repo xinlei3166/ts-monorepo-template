@@ -1,6 +1,7 @@
 # @ts-monorepo-template/package1
 
 ## Install
+
 ```bash
 # npm
 npm install -D @ts-monorepo-template/package1

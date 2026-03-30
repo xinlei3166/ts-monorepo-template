@@ -15,7 +15,7 @@ const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url))
 const moduleName = pkg.name
 const version = process.env.VERSION || pkg.version
 // const resolve = (dir) => path.resolve(__dirname, '../', dir)
-const resolve = (dir) => path.resolve(process.cwd(), dir)
+const resolve = dir => path.resolve(process.cwd(), dir)
 
 const banner =
   '/**\n' +

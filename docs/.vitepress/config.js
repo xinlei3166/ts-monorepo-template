@@ -11,9 +11,7 @@ export default {
     editLinkText: 'Edit this page on GitHub',
     lastUpdated: 'Last Updated',
 
-    nav: [
-      { text: 'Guide', link: '/', activeMatch: '^/' }
-    ],
+    nav: [{ text: 'Guide', link: '/', activeMatch: '^/' }],
 
     sidebar: {
       '/': getGuideSidebar()
@@ -24,7 +22,6 @@ export default {
 function getGuideSidebar() {
   return [
     { text: 'What is ts-monorepo-template?', link: '/' },
-    { text: '@ts-monorepo-template/package1', link: '/package1' },
+    { text: '@ts-monorepo-template/package1', link: '/package1' }
   ]
 }
-

@@ -36,9 +36,9 @@
   },
   "scripts": {
     "test": "vitest",
-    "dev": "tsup src/index.ts --watch src",
+    "dev": "tsdown src/index.ts --watch src",
     "build": "pnpm clean && run-p build:bundle build:umd",
-    "build:bundle": "tsup src/index.ts --dts --format cjs,esm",
+    "build:bundle": "tsdown src/index.ts --dts --format esm --format cjs",
     "build:umd": "rollup --config ../../scripts/rollup.config.mjs",
     "clean": "rm -rf dist",
     "release": "yunque-release --gtp",
