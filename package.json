@@ -1,23 +1,23 @@
 {
   "name": "ts-monorepo-template",
   "version": "0.1.0",
-  "description": "",
   "private": true,
+  "description": "",
+  "keywords": [
+    "monorepo",
+    "template",
+    "typescript"
+  ],
+  "homepage": "https://github.com/xinlei3166/ts-monorepo-template#readme",
+  "bugs": {
+    "url": "https://github.com/xinlei3166/ts-monorepo-template/issues"
+  },
+  "license": "MIT",
+  "author": "君惜",
   "repository": {
     "type": "git",
     "url": "https://github.com/xinlei3166/ts-monorepo-template.git"
   },
-  "keywords": [
-    "typescript",
-    "monorepo",
-    "template"
-  ],
-  "bugs": {
-    "url": "https://github.com/xinlei3166/ts-monorepo-template/issues"
-  },
-  "homepage": "https://github.com/xinlei3166/ts-monorepo-template#readme",
-  "author": "君惜",
-  "license": "MIT",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "simple-git-hooks",
@@ -41,8 +41,8 @@
     "conventional-changelog-cli": "^4.1.0",
     "lint-staged": "^15.0.2",
     "npm-run-all": "^4.1.5",
-    "oxfmt": "^0.42.0",
-    "oxlint": "^1.57.0",
+    "oxfmt": "^0.45.0",
+    "oxlint": "^1.60.0",
     "picocolors": "latest",
     "rollup": "^4.1.4",
     "simple-git-hooks": "latest",
@@ -58,7 +58,7 @@
   },
   "lint-staged": {
     "*": [
-      "oxlint --fix",
+      "oxlint --fix --no-error-on-unmatched-pattern",
       "oxfmt --no-error-on-unmatched-pattern"
     ]
   },
