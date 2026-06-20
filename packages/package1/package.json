@@ -2,22 +2,22 @@
   "name": "@ts-monorepo-template/package1",
   "version": "0.1.0",
   "description": "",
+  "keywords": [
+    "monorepo",
+    "template",
+    "typescript"
+  ],
+  "homepage": "https://github.com/xinlei3166/ts-monorepo-template/tree/main/packages/package1#readme",
+  "bugs": {
+    "url": "https://github.com/xinlei3166/ts-monorepo-template/issues"
+  },
+  "license": "MIT",
+  "author": "君惜",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xinlei3166/ts-monorepo-template.git",
     "directory": "packages/package1"
   },
-  "keywords": [
-    "typescript",
-    "monorepo",
-    "template"
-  ],
-  "bugs": {
-    "url": "https://github.com/xinlei3166/ts-monorepo-template/issues"
-  },
-  "homepage": "https://github.com/xinlei3166/ts-monorepo-template/tree/main/packages/package1#readme",
-  "author": "君惜",
-  "license": "MIT",
   "bin": {},
   "files": [
     "dist"
@@ -35,10 +35,10 @@
     "./dist/*": "./dist/*"
   },
   "scripts": {
-    "test": "vitest",
-    "dev": "tsdown src/index.ts --watch src",
+    "test": "vp test",
+    "dev": "vp pack src/index.ts --watch src",
     "build": "pnpm clean && run-p build:bundle build:umd",
-    "build:bundle": "tsdown src/index.ts --dts --format esm --format cjs",
+    "build:bundle": "vp pack src/index.ts --dts --format esm --format cjs",
     "build:umd": "rollup --config ../../scripts/rollup.config.mjs",
     "clean": "rm -rf dist",
     "release": "yunque-release --gtp",
@@ -47,9 +47,10 @@
   "dependencies": {},
   "devDependencies": {
     "@yunquejs/release": "^0.1.9",
-    "vitest": "^0.34.6"
+    "vite-plus": "catalog:",
+    "vitest": "catalog:"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=22.0.0"
   }
 }
